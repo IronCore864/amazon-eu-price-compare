@@ -39,7 +39,7 @@ function generateSearchUrl(productID, country) {
     countryDomain = 'co.uk';
   }
   var searchUrlSuffix = '/dp/';
-  return searchUrlPrefix + countryDomain + searchUrlSuffix + productID;
+  return searchUrlPrefix + countryDomain + searchUrlSuffix + productID + '/';
 }
 
 function getCountryPrice(productID, country, callback, errorCallback) {
