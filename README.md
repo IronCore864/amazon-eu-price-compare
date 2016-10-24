@@ -1,4 +1,4 @@
-# amz_eu_price_comparator
+# amazon-europe-price-comparator
 OK you want to buy something from Amazon in Europe and no doubt you want the best price.
 
 I guess if you are a frequent Amazon user in Europe you must have already known that among the european countries Amazon has not 1, but 5 different online markets, and they are: amazon.de, amazon.es, amazon.fr, amazon.it and amazon.co.uk.
