@@ -28,3 +28,5 @@ Just a single click and you get the best price. No fuss, no muss.
 
 # Known Issue
 ##### There is some possibility that the price couldn't be fetched, since there are some differences of the DOM structures for different products. Known case is CD products. For it, es, fr, it may fail to get the price.
+
+
