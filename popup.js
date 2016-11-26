@@ -68,10 +68,42 @@ function getCountryPrice(productID, country, callback, errorCallback) {
   xhr.send();
 }
 
+function renderUkPriceToEur(price, callback, errorCallback) {
+  var url = "http://api.fixer.io/latest?symbols=GBP,EUR&base=GBP";
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      data = JSON.parse(xhr.responseText);
+      ratio = data.rates.EUR;
+      price = Number(price.replace(/[^0-9\.]+/g,""));
+      price *= ratio;
+      price = "EUR " + price.toFixed(2);
+      callback(price);
+    }
+  }
+  xhr.onerror = function() {
+    errorCallback('Network error.');
+  };
+  xhr.send();
+}
+
 function renderStatus(country, price, url) {
   if (price == null) {
     return;
   }
+  if (country === 'uk') {
+    renderUkPriceToEur(price, function(price) {
+      setContent('uk', price, url, ratio);
+    }, function(errorMessage) {
+      // renderStatus('Cannot get. ' + errorMessage);
+    });
+  } else {
+    setContent(country, price, url);
+  }
+}
+
+function setContent(country, price, url) {
   var res = document.getElementById('status').innerHTML;
   res = res + "<div>Amazon " + country.toUpperCase() + ": <a href=\"" + url + "\" target=\"_blank\">" + price + "</a></div>"
   document.getElementById('status').innerHTML = res;
