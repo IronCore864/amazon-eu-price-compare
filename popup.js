@@ -117,11 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    //   chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
-    //     country_price_map.country={'price': response.farewell, 'url':url};
-    //   });
-    // });
+    chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
+      chrome.tabs.sendMessage(tabs[0].id, {"message": "get_current_page_price"}, function(response) {
+        renderStatus(country, response, "");
+      });
+    });
 
     var countries = ['uk', 'de', 'fr', 'es', 'it'];
     var currentCountryList = [country];
@@ -136,3 +136,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
