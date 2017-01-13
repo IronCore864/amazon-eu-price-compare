@@ -9,11 +9,35 @@ export default class App extends React.Component {
       prices: []
     };
 
+    // in case you clicked the button before the page is shown
+    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+      if (changeInfo.status == "complete") {
+        this.getCurrentPagePrice();
+      }
+    }.bind(this));
+  }
+
+  getCurrentPagePrice() {
     chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
       chrome.tabs.sendMessage(tabs[0].id, {"message": "get_current_page_price"}, function(response) {
+        if (response === null) {
+          return;
+        }
+        function alreadyHasCountry(country, country_prices) {
+          for (var i = 0; i < country_prices.length; i++) {
+              if (country_prices[i].country === country) {
+                  return true;
+              }
+          }
+          return false;
+        }
+        var country = amzUtil.getCountryFromAmazonProductPageUrl(tabs[0].url).toUpperCase();
+        if (alreadyHasCountry(country, this.state.prices)) {
+          return;
+        }
         this.setState({
           prices: this.state.prices.concat({
-            country: amzUtil.getCountryFromAmazonProductPageUrl(tabs[0].url).toUpperCase(),
+            country: country,
             price: response,
           })
         });
@@ -103,6 +127,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    this.getCurrentPagePrice();
     this.getOtherAmazonMarketsPrices();
   }
 
