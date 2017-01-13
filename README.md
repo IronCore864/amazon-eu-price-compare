@@ -1,5 +1,5 @@
-Chrome webstore link:
-https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad
+
+(https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad "Chrome Webstore")
 
 # Find the Best Price in Amazon European Markets
 OK. You want to buy something from Amazon in Europe and of course you want the best price.
