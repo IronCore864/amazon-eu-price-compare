@@ -6,7 +6,7 @@ OK. You want to buy something from Amazon in Europe and of course you want the b
 
 I bet if you are a frequent Amazon user in Europe, you must have already known that among the european countries, Amazon has not only 1, but 5 different stores, which are: amazon.de, amazon.es, amazon.fr, amazon.it and amazon.co.uk.
 
-And I think you are no stranger to the fact that most of the time each item is sold on all of the 5 markets, and no matter which Amazon market you choose, it can be shipped within the EU area with a little shipping cost difference, however the price for the item differs, sometimes a lot.
+And I think you are no stranger to the fact that most of the time each item is sold on all of the 5 markets, and no matter which Amazon market you choose, it can be shipped within the EU area, however the price for the item differs, sometimes a lot.
 
 So let me describe normally what you would do:
 
