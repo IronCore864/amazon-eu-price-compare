@@ -41,7 +41,7 @@ exports.getPriceFromAmazonProductDetailPage = function(doc) {
   if (price === null) {
     return null;
   }
-  var price_str = price.innerHTML.replace(/&nbsp;/g, '').replace(/ /g, '').replace(/^\D+/g, '').replace(/\,/g, '.');
+  var price_str = price.innerHTML.split('-')[0].replace(/&nbsp;/g, '').replace(/ /g, '').replace(/^\D+/g, '').replace(/\,/g, '.');
   var priceParts = price_str.split('.');
   var priceAfterPoint = priceParts.pop();
   var priceBeforePoint = priceParts.join('');
