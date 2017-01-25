@@ -4,7 +4,8 @@
   "description": "This extension compares price from amazon de, it, es, fr and uk",
   "main": "content.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "zip": "zip -r chrome-extension/chrome-extension.zip chrome-extension"
   },
   "repository": {
     "type": "git",
