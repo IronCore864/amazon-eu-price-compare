@@ -25,22 +25,17 @@ export default class App extends React.Component {
         }
         function alreadyHasCountry(country, country_prices) {
           for (var i = 0; i < country_prices.length; i++) {
-              if (country_prices[i].country === country) {
+              if (country_prices[i].country === country.toUpperCase()) {
                   return true;
               }
           }
           return false;
         }
-        var country = amzUtil.getCountryFromAmazonProductPageUrl(tabs[0].url).toUpperCase();
+        var country = amzUtil.getCountryFromAmazonProductPageUrl(tabs[0].url);
         if (alreadyHasCountry(country, this.state.prices)) {
           return;
         }
-        this.setState({
-          prices: this.state.prices.concat({
-            country: country,
-            price: response,
-          })
-        });
+        this.setPrice(null, country, response, null);
       }.bind(this));
     }.bind(this));
   }
@@ -65,7 +60,10 @@ export default class App extends React.Component {
       .then((response) => response.json())
       .then((responseJson) => {
         var rate = responseJson.rates.EUR;
+        console.log(country)
+        console.log(price)
         price *= rate;
+        console.log(price)
         this.setState({
           prices: this.state.prices.concat({
             country: country.toUpperCase(),
