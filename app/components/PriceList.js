@@ -3,6 +3,12 @@ import React from "react"
 
 export default class App extends React.Component {
 	componentDidMount() {
+		chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+			if (changeInfo.status == "complete") {
+				this.props.getCurrentPageUrl()
+			}
+    	}.bind(this))
+
 		this.props.getCurrencyRate()
 		this.props.getCurrentPageUrl()
 	}

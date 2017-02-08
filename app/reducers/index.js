@@ -15,9 +15,11 @@ const rate = (state = {}, action) => {
 const price = (state = [], action) => {
 	switch (action.type) {
 		case RECEIVE_CURRENT_PAGE_PRICE:
-			return [...state, {country: action.country, price: action.price, current: true}]
+			var new_state = state.filter(obj => obj.country!==action.country)
+			return [...new_state, {country: action.country, price: action.price, current: true}]
 		case RECEIVE_COUNTRY_PRICE:
-			return [...state, {country: action.country, price: action.price, url: action.url}]
+			var new_state = state.filter(obj => obj.country!==action.country)
+			return [...new_state, {country: action.country, price: action.price, url: action.url}]
 		default:
 			return state
 	}
