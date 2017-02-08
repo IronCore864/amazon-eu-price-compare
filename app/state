@@ -1,12 +1,14 @@
 {
-	current_country: '',
-	current_price: '',
-	prices_eur: [
+	rate : {
+		'EUR': 1,
+		'GBP': 1,
+	},
+	price: [
 		{
 			country: '',
-	        eur_price: price,
+	        price: price,
 	        url: url,
-	        gbp_price: price,
-		}
+		},
+		...
 	]
 }

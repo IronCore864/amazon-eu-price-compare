@@ -1,27 +1,31 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_CURRENCY_RATE } from '../actions'
+import { RECEIVE_CURRENCY_RATE, RECEIVE_CURRENT_PAGE_PRICE, RECEIVE_COUNTRY_PRICE } from '../actions'
 
-const rate = (state = [], action) => {
+const rate = (state = {}, action) => {
 	switch (action.type) {
 		case RECEIVE_CURRENCY_RATE:
-		 	return Object.assign({}, state, {action.base: action.rate})
+			var rate = {}
+			rate[`${action.fromCurrency}${action.toCurrency}`] = action.rate
+			return Object.assign({}, state, rate)
 		default:
 			return state
 	}
 }
 
-const filterText = (state = '', action) => {
+const price = (state = [], action) => {
 	switch (action.type) {
-		case SET_FILTER_TEXT:
-			return action.text
+		case RECEIVE_CURRENT_PAGE_PRICE:
+			return [...state, {country: action.country, price: action.price, current: true}]
+		case RECEIVE_COUNTRY_PRICE:
+			return [...state, {country: action.country, price: action.price, url: action.url}]
 		default:
 			return state
 	}
 }
 
-const parterMtWinApp = combineReducers({
-	partners,
-	filterText
+const amazonEUPriceCompareApp = combineReducers({
+	rate,
+	price
 })
 
 export default amazonEUPriceCompareApp
