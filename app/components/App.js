@@ -1,20 +1,20 @@
 import React from "react"
-import * as amzUtil from "./amazon_utils.js"
+import * as amzUtil from "../tools/amazon_utils"
 
 export default class App extends React.Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       prices: []
-    };
+    }
 
     // in case you clicked the button before the page is shown
     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       if (changeInfo.status == "complete") {
-        this.getCurrentPagePrice();
+        this.getCurrentPagePrice()
       }
-    }.bind(this));
+    }.bind(this))
   }
 
   getCurrentPagePrice() {

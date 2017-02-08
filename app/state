@@ -1,0 +1,12 @@
+{
+	current_country: '',
+	current_price: '',
+	prices_eur: [
+		{
+			country: '',
+	        eur_price: price,
+	        url: url,
+	        gbp_price: price,
+		}
+	]
+}
