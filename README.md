@@ -1,3 +1,7 @@
+# Version 1.2.1 Updates:
+- If you are visiting Amazon UK, prices are shown in both EUR and GBP.
+- Minor bug fix, like if you're not visiting amazon product page, corresponding message is shown instead of a blank page.
+- Code refactor, to use redux to separate model and view.
 
 [Chrome Webstore](https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad)
 
@@ -28,11 +32,13 @@ Just a single click and you get the best price. No fuss, no muss.
 # Known Issue
 ##### For CD category products, there is some possibility that the price cannot be fetched. Blame Amazon, not me, since it's them who created such inconsistent pages. I know how to fix it of course but I just couldn't be bothered. When I buy CD I alwasy go for Amazon UK anyway since I don't speak German, Italian, French or Spainish at all.
 
-# DEV
+# DEV Info
 Chrome extension with react and redux.
+
 npm, babel and webpack needed for building.
+
 ### Build
 npm run build
+
 ### Unpacked chrome extension dir
 chrome-extension
-
