@@ -1,5 +1,6 @@
 # Version 1.2.1 Updates:
-- If you are visiting Amazon UK, prices are shown in both EUR and GBP.
+- If you are visiting Amazon UK, prices are shown in both EUR and GBP (Thanks to UK user Richard Burgess's suggestion).
+
 - Minor bug fix, like if you're not visiting amazon product page, corresponding message is shown instead of a blank page.
 - Code refactor, to use redux to separate model and view.
 
