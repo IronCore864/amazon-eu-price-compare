@@ -1,7 +1,7 @@
 module.exports = {
   entry: {
-    'popup': './entry.jsx',
-    'content': './app/content.jsx'
+    'popup': './app/index.js',
+    'content': './app/chrome/content.js'
   },
   output: {
     path: './chrome-extension',
@@ -10,7 +10,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {

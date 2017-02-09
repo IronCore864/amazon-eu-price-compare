@@ -1,0 +1,14 @@
+{
+	rate : {
+		'EUR': 1,
+		'GBP': 1,
+	},
+	price: [
+		{
+			country: '',
+	        price: price,
+	        url: url,
+		},
+		...
+	]
+}
