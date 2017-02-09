@@ -1,7 +1,7 @@
 module.exports = {
   entry: {
-    'popup': './app/index.js',
-    'content': './app/chrome/content.js'
+    'popup': './src/index.js',
+    'content': './src/chrome/content.js'
   },
   output: {
     path: './chrome-extension',

@@ -3,7 +3,7 @@
 
   "name": "Amazon EU Price Compare",
   "description": "This extension compares price from amazon de, it, es, fr and uk",
-  "version": "1.1.5",
+  "version": "1.2.1",
 
   "icons": {
     "128": "icon128.png",

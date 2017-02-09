@@ -36,7 +36,13 @@ export function getCurrentPageUrl() {
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 			var country = amzUtil.getCountryFromAmazonProductPageUrl(tabs[0].url)
 			var productID = amzUtil.getProductIDFromAmazonProductPageUrl(tabs[0].url)
+			if (productID === null) {
+				return
+			}
 			chrome.tabs.sendMessage(tabs[0].id, {"message": "get_current_page_price"}, function(price) {
+				if (price === null) {
+					return
+				}
 				dispatch(receiveCurrentPagePrice(country, price))
 			})
 			var all_countries = ['uk', 'de', 'fr', 'es', 'it']
@@ -74,7 +80,7 @@ export function getCurrencyRate(fromCurrency, toCurrency) {
 
 export function getCountryPrice(productID, country) {
 	return (dispatch, getState) => {
-		var url = amzUtil.generateAmazonProductPageUrlForCountry(productID, country);
+		var url = amzUtil.generateAmazonProductPageUrlForCountry(productID, country)
 		return fetch(
 			url,
 			{
@@ -97,11 +103,11 @@ export function getCountryPrice(productID, country) {
 					dispatch(receiveCountryPrice(country, price, url))
 				})
 			} else {
-				console.log('Network response was not ok.');
+				console.log(`Cannot find this item from amazon ${country}.`)
 			}
 		})
 		.catch(function(err) {
-			console.log('There has been a problem with fetching price for other amazon markets: ' + error.message);
+			console.log('There has been a problem with fetching price for other amazon markets: ' + error.message)
 		})
 	}
 }

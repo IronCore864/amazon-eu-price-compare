@@ -14,6 +14,11 @@ export default class App extends React.Component {
 	}
 
 	render() {
+		if (this.props.price.length === 0) {
+			return (
+				<p>Not amazon product detail page</p>
+			)
+		}
 		var currentCountry = ''
 		this.props.price.map(function(amz) {
 			if (amz.current == true) {
