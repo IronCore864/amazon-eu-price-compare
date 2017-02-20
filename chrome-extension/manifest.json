@@ -15,10 +15,18 @@
     "default_popup": "popup.html",
     "default_title": "Amazon EU Price Comparator"
   },
+
   "permissions": [
     "activeTab",
-    "https://ajax.googleapis.com/"
+    "https://ajax.googleapis.com/",
+    "storage"
   ],
+
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+
   "content_scripts": [
     {
       "matches": ["*://www.amazon.de/*", "*://www.amazon.fr/*", "*://www.amazon.it/*", "*://www.amazon.es/*", "*://www.amazon.co.uk/*"],
