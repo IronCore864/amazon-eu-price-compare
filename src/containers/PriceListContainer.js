@@ -1,11 +1,13 @@
 import PriceList from '../components/PriceList'
 import { connect } from 'react-redux'
-import { getCurrentPageUrl, getCurrencyRate } from '../actions'
+import { getCurrentPageUrl, getCurrencyRate, getOptions } from '../actions'
 
 const mapStateToProps = (state) => {
 	return {
 		rate: state.rate,
-		price: state.price
+		price: state.price,
+		rank: state.rank,
+		options: state.options
 	}
 }
 
@@ -18,7 +20,9 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(getCurrencyRate('EUR', 'GBP'))
 			dispatch(getCurrencyRate('GBP', 'EUR'))
 		},
-		//dispatch
+		getOptions: () => {
+			dispatch(getOptions())
+		}
 	}
 }
 

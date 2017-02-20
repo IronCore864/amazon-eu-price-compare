@@ -1,6 +1,6 @@
 {
   "name": "amazon-eu-price-compare",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "This extension compares price from amazon de, it, es, fr and uk",
   "main": "content.js",
   "scripts": {
