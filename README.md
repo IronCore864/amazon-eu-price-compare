@@ -38,6 +38,9 @@ npm run build
 ### Unpacked chrome extension dir
 chrome-extension
 
+# Version 1.3.0 Updates:
+- Add product rank. If you select "show ranks" from options page, product rank in each country will be shown(main category).
+
 # Version 1.2.2 Updates:
 - Add options page. In this page you can choose if you'd like to show product ranks or not. Default is false.
 
