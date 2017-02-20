@@ -39,10 +39,8 @@ npm run build
 chrome-extension
 
 # Version 1.3.0 Updates:
-- Add product rank. If you select "show ranks" from options page, product rank in each country will be shown(main category).
-
-# Version 1.2.2 Updates:
-- Add options page. In this page you can choose if you'd like to show product ranks or not. Default is false.
+- Add options page
+- Add product rank. By default it's not shown. Can be enabled in options page. Only main category rank is shown.
 
 # Version 1.2.1 Updates:
 - If you are visiting Amazon UK, prices are shown in both EUR and GBP (Thanks to UK user Richard Burgess's suggestion).
