@@ -1,3 +1,6 @@
+# Version 1.2.2 Updates:
+- Add options page. In this page you can choose if you'd like to show product ranks or not. Default is false.
+
 # Version 1.2.1 Updates:
 - If you are visiting Amazon UK, prices are shown in both EUR and GBP (Thanks to UK user Richard Burgess's suggestion).
 
