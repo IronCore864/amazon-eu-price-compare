@@ -3,12 +3,12 @@ import React from "react"
 
 export default class App extends React.Component {
 	componentDidMount() {
+		this.props.getOptions()
 		chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 			if (changeInfo.status == "complete") {
 				this.props.getCurrentPageUrl()
 			}
-    	}.bind(this))
-
+		}.bind(this))
 		this.props.getCurrencyRate()
 		this.props.getCurrentPageUrl()
 	}
@@ -17,9 +17,11 @@ export default class App extends React.Component {
 		if (this.props.price.length === 0) {
 			return (
 				<p>Not amazon product detail page</p>
-			)
+				)
 		}
+
 		var currentCountry = ''
+
 		this.props.price.map(function(amz) {
 			if (amz.current == true) {
 				currentCountry = amz.country
@@ -39,31 +41,41 @@ export default class App extends React.Component {
 				amz.gbpPrice = (amz.price * EURGBP).toFixed(2)
 				return amz	
 			}
-			
 		})
 
 		prices = prices.sort(function(a, b){
 			return a.eurPrice - b.eurPrice
-		});
-		console.log(prices)
+		})
+
+		var showRanks = this.props.options.showRanks
+		if (showRanks) {
+			var ranks = this.props.rank
+			prices = prices.map(function(amz) {
+				amz.rank = ranks[amz.country]
+				return amz
+			})
+		}
+
 		const price_list = prices.map(function(amz) {
 			return (
 				<tr key={amz.country}>
-					<td className="amazon">Amazon</td>
-					<td className="country">{amz.country.toUpperCase()}</td>
-					<td className="price"><a href={amz.url} target="_blank">&euro; {amz.eurPrice}</a></td>
-					{currentCountry == 'uk' &&
-						<td className="price"><a href={amz.url} target="_blank">&pound; {amz.gbpPrice}</a></td>}
-				</tr>
-			)
+				<td className="amazon">Amazon</td>
+				<td className="country">{amz.country.toUpperCase()}</td>
+				<td className="price"><a href={amz.url} target="_blank">&euro; {amz.eurPrice}</a></td>
+				{currentCountry == 'uk' &&
+				<td className="price"><a href={amz.url} target="_blank">&pound; {amz.gbpPrice}</a></td>}
+				{showRanks === true &&
+					<td className="rank">{amz.rank}</td>}
+					</tr>
+					)
 		})
 
 		return (
 			<table className="pricelist">
-				<tbody>
-					{price_list}
-				</tbody>
+			<tbody>
+			{price_list}
+			</tbody>
 			</table>
-		)
+			)
 	}
 }

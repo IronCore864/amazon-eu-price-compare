@@ -1,12 +1,3 @@
-# Version 1.2.2 Updates:
-- Add options page. In this page you can choose if you'd like to show product ranks or not. Default is false.
-
-# Version 1.2.1 Updates:
-- If you are visiting Amazon UK, prices are shown in both EUR and GBP (Thanks to UK user Richard Burgess's suggestion).
-
-- Minor bug fix, like if you're not visiting amazon product page, corresponding message is shown instead of a blank page.
-- Code refactor, to use redux to separate model and view.
-
 [Chrome Webstore](https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad)
 
 # Find the Best Price in Amazon European Markets
@@ -46,3 +37,14 @@ npm run build
 
 ### Unpacked chrome extension dir
 chrome-extension
+
+# Version 1.3.0 Updates:
+- Add product rank. If you select "show ranks" from options page, product rank in each country will be shown(main category).
+
+# Version 1.2.2 Updates:
+- Add options page. In this page you can choose if you'd like to show product ranks or not. Default is false.
+
+# Version 1.2.1 Updates:
+- If you are visiting Amazon UK, prices are shown in both EUR and GBP (Thanks to UK user Richard Burgess's suggestion).
+- Minor bug fix, like if you're not visiting amazon product page, corresponding message is shown instead of a blank page.
+- Code refactor, to use redux to separate model and view.

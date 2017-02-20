@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_CURRENCY_RATE, RECEIVE_CURRENT_PAGE_PRICE, RECEIVE_COUNTRY_PRICE } from '../actions'
+import { RECEIVE_CURRENCY_RATE, RECEIVE_CURRENT_PAGE_PRICE, RECEIVE_COUNTRY_PRICE, RECEIVE_COUNTRY_RANK, RECEIVE_OPTIONS } from '../actions'
 
 const rate = (state = {}, action) => {
 	switch (action.type) {
@@ -25,9 +25,29 @@ const price = (state = [], action) => {
 	}
 }
 
+const rank = (state = {}, action) => {
+	switch (action.type) {
+		case RECEIVE_COUNTRY_RANK:
+			return Object.assign({}, state, {[action.country]: action.rank})
+		default:
+			return state
+	}
+}
+
+const options = (state = {}, action) => {
+	switch (action.type) {
+		case RECEIVE_OPTIONS:
+			return action.items
+		default:
+			return state
+	}
+}
+
 const amazonEUPriceCompareApp = combineReducers({
 	rate,
-	price
+	price,
+	rank,
+	options
 })
 
 export default amazonEUPriceCompareApp

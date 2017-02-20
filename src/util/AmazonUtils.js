@@ -49,3 +49,7 @@ export function getPriceFromAmazonProductDetailPage(doc) {
   }
   return parseFloat(res)
 }
+
+export function getRank(doc) {
+  return doc.getElementById("SalesRank").childNodes[1].innerHTML.trim().split('(')[0].trim().replace('&amp;','&')
+}
