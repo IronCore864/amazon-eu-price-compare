@@ -38,6 +38,9 @@ npm run build
 ### Unpacked chrome extension dir
 chrome-extension
 
+# Version 1.3.1 Updates:
+- Fix bug when a product doesn't has main category rank
+
 # Version 1.3.0 Updates:
 - Add options page
 - Add product rank. By default it's not shown. Can be enabled in options page. Only main category rank is shown.

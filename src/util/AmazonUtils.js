@@ -51,5 +51,5 @@ export function getPriceFromAmazonProductDetailPage(doc) {
 }
 
 export function getRank(doc) {
-  return doc.getElementById("SalesRank").childNodes[1].innerHTML.trim().split('(')[0].trim().replace('&amp;','&')
+  return doc.getElementById("SalesRank").childNodes[1].innerText.trim().split('(')[0].trim().replace('&amp;','&')
 }
