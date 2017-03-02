@@ -38,6 +38,9 @@ npm run build
 ### Unpacked chrome extension dir
 chrome-extension
 
+# Version 1.3.2 Updates:
+- Fix bug about some amazon URL analyzing
+
 # Version 1.3.1 Updates:
 - Fix bug when a product doesn't has main category rank
 

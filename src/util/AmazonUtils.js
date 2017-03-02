@@ -1,5 +1,5 @@
 export function getProductIDFromAmazonProductPageUrl(url) {
-  var re = /amazon.*\/([A-Z0-9]{10})\//
+  var re = /amazon.*\/([A-Z0-9]{10})(\/|\?|$)/
   var match = re.exec(url)
   if(url.match(re)){
     return match[1]
