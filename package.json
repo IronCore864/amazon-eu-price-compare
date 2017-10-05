@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IronCore864/chrome-extension-react-practice.git"
+    "url": "git+https://github.com/IronCore864/amazon-eu-price-compare.git"
   },
   "author": "Tiexin Guo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IronCore864/chrome-extension-react-practice/issues"
+    "url": "https://github.com/IronCore864/amazon-eu-price-compare/issues"
   },
-  "homepage": "https://github.com/IronCore864/chrome-extension-react-practice#readme",
+  "homepage": "https://github.com/IronCore864/amazon-eu-price-compare#readme",
   "devDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
