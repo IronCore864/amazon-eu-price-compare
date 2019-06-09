@@ -90,7 +90,7 @@ export function getOptions() {
 export function getCurrencyRate(fromCurrency, toCurrency) {
 	return (dispatch, getState) => {
 		return fetch(
-			`https://api.fixer.io/latest?symbols=GBP,EUR&base=${fromCurrency}`,
+			`https://api.exchangeratesapi.io/latest?symbols=${toCurrency}&base=${fromCurrency}`,
 			{
 				method: 'GET',
 				headers: {
