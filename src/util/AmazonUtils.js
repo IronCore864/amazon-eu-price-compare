@@ -37,6 +37,9 @@ export function getPriceFromAmazonProductDetailPage(doc) {
 		price = doc.getElementById("priceblock_ourprice")
 	}
 	if (price === null) {
+		price = doc.getElementById('tmmSwatches').getElementsByClassName("a-color-price")[0]
+	}
+	if (price === null) {
 		return null
 	}
 	var price_str = price.innerHTML.split('-')[0].replace(/&nbsp;/g, '').replace(/ /g, '').replace(/^\D+/g, '').replace(/\,/g, '.')

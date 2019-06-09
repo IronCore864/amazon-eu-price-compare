@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   entry: {
     'popup': './src/index.js',
@@ -5,7 +7,7 @@ module.exports = {
     'options': './src/chrome/options.js'
   },
   output: {
-    path: './chrome-extension',
+    path: path.resolve(__dirname, 'chrome-extension'),
     filename: '[name].js'
   },
   module: {

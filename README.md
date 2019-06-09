@@ -25,7 +25,7 @@ This extension helps you to find the best price with just one click. You just go
 Just a single click and you get the best price. No fuss, no muss.
 
 # Known Issue
-##### For CD category products, there is some possibility that the price cannot be fetched. Blame Amazon, not me, since it's them who created such inconsistent pages. I know how to fix it of course but I just couldn't be bothered. When I buy CD I alwasy go for Amazon UK anyway since I don't speak German, Italian, French or Spainish at all.
+##### For CD/books/DVD categories, some products have multiple format, like a movie can have multiple formats like DVD, blue-ray, etc; for some products can't parse price correctly.
 
 # DEV Info
 Chrome extension with react and redux.
@@ -37,6 +37,11 @@ npm run build
 
 ### Unpacked chrome extension dir
 chrome-extension
+
+# Version 1.4.0 Updates:
+- Change currency exchange rate API URL
+- Fix issues with most CD/books/DVD categories that may have multiple formats and different prices
+- Update error message when can't parse price
 
 # Version 1.3.2 Updates:
 - Fix bug about some amazon URL analyzing

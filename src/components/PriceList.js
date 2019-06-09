@@ -16,7 +16,7 @@ export default class App extends React.Component {
 	render() {
 		if (this.props.price.length === 0) {
 			return (
-				<p>Not amazon product detail page</p>
+				<p>Not amazon product detail page or can't parse price</p>
 				)
 		}
 

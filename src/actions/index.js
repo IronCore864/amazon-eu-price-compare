@@ -93,6 +93,7 @@ export function getCurrencyRate(fromCurrency, toCurrency) {
 			`https://api.exchangeratesapi.io/latest?symbols=${toCurrency}&base=${fromCurrency}`,
 			{
 				method: 'GET',
+				mode: 'cors',
 				headers: {
 					'Accept': 'application/json',
 					'Content-Type': 'application/json',
