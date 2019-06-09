@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Amazon Best Price Europe",
-  "description": "Find the best price in Amazon european markets",
-  "version": "1.4.0",
+  "description": "Compare and find the best price in Amazon EU markets.",
+  "version": "1.4.1",
 
   "icons": {
     "128": "icon128.png",

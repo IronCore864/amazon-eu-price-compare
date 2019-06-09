@@ -38,6 +38,9 @@ npm run build
 ### Unpacked chrome extension dir
 chrome-extension
 
+# Version 1.4.1 Updates:
+- Update manifest description.
+
 # Version 1.4.0 Updates:
 - Change currency exchange rate API URL
 - Fix issues with most CD/books/DVD categories that may have multiple formats and different prices
