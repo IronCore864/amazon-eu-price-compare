@@ -1,11 +1,12 @@
 [Chrome Webstore](https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad)
 
 # Find the Best Price in Amazon European Markets
+
 OK. You want to buy something from Amazon in Europe and of course you want the best price.
 
-I bet if you are a frequent Amazon user in Europe, you must have already known that among the european countries, Amazon has not only 1, but 5 different stores, which are: amazon.de, amazon.es, amazon.fr, amazon.it and amazon.co.uk.
+I bet if you are a frequent Amazon user in Europe, you must have already known that among the european countries, Amazon has not only 1, but 6 different stores, which are: amazon.de, amazon.es, amazon.fr, amazon.it, amazon.nl and amazon.co.uk.
 
-And I think you are no stranger to the fact that most of the time each item is sold on all of the 5 markets, and no matter which Amazon market you choose, it can be shipped within the EU area, however the price for the item differs, sometimes a lot.
+And I think you are no stranger to the fact that most of the time each item is sold on all of the 6 markets, and no matter which Amazon market you choose, it can be shipped within the EU area, however the price for the item differs, sometimes a lot.
 
 So let me describe normally what you would do:
 
@@ -25,18 +26,37 @@ This extension helps you to find the best price with just one click. You just go
 Just a single click and you get the best price. No fuss, no muss.
 
 # Known Issue
+
 ##### For CD/books/DVD categories, some products have multiple format, like a movie can have multiple formats like DVD, blue-ray, etc; for some products can't parse price correctly.
 
 # DEV Info
+
 Chrome extension with react and redux.
 
 npm, babel and webpack needed for building.
 
 ### Build
+
+```
+npm i
+npm audit fix
 npm run build
+```
 
 ### Unpacked chrome extension dir
+
 chrome-extension
+
+# Version 1.5 Updates:
+
+I was informed by a user that Amazon opens amazon.nl for Netherland and Belgium, so this version is mainly about adding support for amazon.nl
+
+Main feature:
+- Adding support for amazon.nl
+
+By the way, some minor non-functional changes:
+- Update dependencies versions to fix vulnerabilites
+- Update README about build info
 
 # Version 1.4.1 Updates:
 - Update manifest description.
