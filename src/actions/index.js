@@ -65,7 +65,7 @@ export function getCurrentPageUrl() {
 					dispatch(receiveCountryRank(country, results[1]))	
 				}
 			})
-			var all_countries = ['uk', 'de', 'fr', 'es', 'it']
+			var all_countries = ['uk', 'de', 'fr', 'es', 'it', 'nl']
 			var currentCountry = [country]
 			var countriesToSearch = all_countries.filter(x => currentCountry.indexOf(x) < 0 )
 			for (var i = 0; i < countriesToSearch.length; i ++){

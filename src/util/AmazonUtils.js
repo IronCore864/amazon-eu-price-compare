@@ -10,7 +10,7 @@ export function getProductIDFromAmazonProductPageUrl(url) {
 }
 
 export function getCountryFromAmazonProductPageUrl(url) {
-	var re = /amazon(\.co)*\.(uk|fr|de|it|es)/
+	var re = /amazon(\.co)*\.(uk|fr|de|it|es|nl)/
 	var match = re.exec(url)
 	if(url.match(re)){
 		return match[2]
