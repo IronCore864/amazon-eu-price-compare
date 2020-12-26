@@ -55,7 +55,7 @@ My future improvement about this plugin will only be done in my spare time outsi
 
 ## FAQ
 
-See [faq.md](./faq.md)
+See [FAQ](./faq)
 
 ## DEV Info
 
