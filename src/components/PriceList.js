@@ -30,15 +30,26 @@ export default class App extends React.Component {
 
 		var GBPEUR = this.props.rate.GBPEUR
 		var EURGBP = this.props.rate.EURGBP
+		var GBPSEK = this.props.rate.GBPSEK
+		var SEKGBP = this.props.rate.SEKGBP
+		var EURSEK = this.props.rate.EURSEK
+		var SEKEUR = this.props.rate.SEKEUR
 		
 		var prices = this.props.price.map(function(amz){
 			if (amz.country == 'uk') {
 				amz.gbpPrice = amz.price
+				amz.sekPrice = (amz.price * GBPSEK).toFixed(2)
 				amz.eurPrice = (amz.price * GBPEUR).toFixed(2)
+				return amz
+			} else if (amz.country == 'se') {
+				amz.sekPrice = amz.price
+				amz.gbpPrice = (amz.price * SEKGBP).toFixed(2)
+				amz.eurPrice = (amz.price * SEKEUR).toFixed(2)
 				return amz
 			} else {
 				amz.eurPrice = amz.price
 				amz.gbpPrice = (amz.price * EURGBP).toFixed(2)
+				amz.sekPrice = (amz.price * EURSEK).toFixed(2)
 				return amz	
 			}
 		})
@@ -61,9 +72,10 @@ export default class App extends React.Component {
 				<tr key={amz.country}>
 				<td className="amazon">Amazon</td>
 				<td className="country">{amz.country.toUpperCase()}</td>
+				{/* {['de', 'es', 'it', 'fr', 'es'].includes(currentCountry) && <td className="price"><a href={amz.url} target="_blank">&euro; {amz.eurPrice}</a></td>} */}
+				{currentCountry == 'uk' && <td className="price"><a href={amz.url} target="_blank">&pound; {amz.gbpPrice}</a></td>}
+				{currentCountry == 'se' && <td className="price"><a href={amz.url} target="_blank">kr {amz.sekPrice}</a></td>}
 				<td className="price"><a href={amz.url} target="_blank">&euro; {amz.eurPrice}</a></td>
-				{currentCountry == 'uk' &&
-				<td className="price"><a href={amz.url} target="_blank">&pound; {amz.gbpPrice}</a></td>}
 				{showRanks === true &&
 					<td className="rank">{amz.rank}</td>}
 					</tr>

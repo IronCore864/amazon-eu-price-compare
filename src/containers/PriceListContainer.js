@@ -19,6 +19,10 @@ const mapDispatchToProps = (dispatch) => {
 		getCurrencyRate: () => {
 			dispatch(getCurrencyRate('EUR', 'GBP'))
 			dispatch(getCurrencyRate('GBP', 'EUR'))
+			dispatch(getCurrencyRate('SEK', 'EUR'))
+			dispatch(getCurrencyRate('EUR', 'SEK'))
+			dispatch(getCurrencyRate('SEK', 'GBP'))
+			dispatch(getCurrencyRate('GBP', 'SEK'))
 		},
 		getOptions: () => {
 			dispatch(getOptions())

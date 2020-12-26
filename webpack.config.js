@@ -11,13 +11,14 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
+        options: {
+          presets: ["@babel/preset-env"],
+          plugins: ["@babel/plugin-transform-react-jsx"]
         }
       }
     ]
