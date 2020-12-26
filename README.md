@@ -51,6 +51,10 @@ Everything I have said, am saying now, and will be said in the future about this
 
 My future improvement about this plugin will only be done in my spare time outside office hours.
 
+## FAQ
+
+See [faq.md](./faq.md)
+
 ## DEV Info
 
 Chrome extension with react and redux.
