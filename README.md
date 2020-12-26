@@ -8,6 +8,8 @@ You just go to any Amazon EU store, search your item, click the icon of this ext
 
 Please go to [Chrome Webstore](https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad).
 
+Install now and be part of the 1874 proud user base (as of Dec 26th, 2020).
+
 ## Let Me Paint a Picture
 
 OK. You live in Europe, and you want to buy something off Amazon. Of course, you want the best price.
