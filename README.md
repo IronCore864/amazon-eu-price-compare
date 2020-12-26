@@ -2,7 +2,7 @@
 
 This extension helps you to find the best price with just one click.
 
-You just go to any Amazon EU store, search your item, click the icon of this extension(a black letter B, which stands for the "B"est price of course) and it shows you the prices in all the other Amazon european stores, including currency conversion (GBP/SEK).
+You just go to any Amazon EU store, search your item, click the icon of this extension(a black letter B, which stands for the "B"est price of course) and it shows you the prices in all the other Amazon European stores, including currency conversion (GBP/SEK).
 
 ## Download and Install
 
@@ -14,7 +14,7 @@ Install now and be part of the 1874 proud user base (as of Dec 26th, 2020).
 
 OK. You live in Europe, and you want to buy something off Amazon. Of course, you want the best price.
 
-If you are a frequent Amazon user living in Europe, chances are, you have already known the fact that among the european countries, Amazon has not only 1, but many different stores. At the time of Dec 2020, there are:
+If you are a frequent Amazon user living in Europe, chances are, you have already known the fact that among the European countries, Amazon has not only 1, but many different stores. At the time of Dec 2020, there are:
 
 - amazon.de
 - amazon.es
@@ -28,7 +28,7 @@ And the number probably will still increase.
 
 If you are a frequent Amazon user living in Europe, chances are, you have also already figured out that most of the items are sold in all the markets above; they can be shipped within EU; but the prices differ, sometimes greatly.
 
-So let me describe normally as a non-millionare what you would do:
+So let me describe normally as a non-millionaire what you would do:
 
 1. Open amazon.de (maybe uk, es, fr, it, se, nl; depending on where you live)
 2. Search the product you want
@@ -37,7 +37,7 @@ So let me describe normally as a non-millionare what you would do:
 5. Paste the name you copied in step 3, to the 6 tabs you just opened and click search
 6. Switching back and forth between all the tabs for the lowest price
 
-You probably see where I'm going with this, and yes, you are right: it is annoying to do the samething 7 times everytime you want to search something on Amazon, which probably you won't even buy in the end, and even if you do, it may be something only cost something ninety-nine so the effort really isn't worth it.
+You probably see where I'm going with this, and yes, you are right: it is annoying to do the same thing 7 times every time you want to search something on Amazon, which probably you won't even buy in the end, and even if you do, it may be something only cost something ninety-nine so the effort really isn't worth it.
 
 Well, now you are saved. Install this plugin, just a single click, and you get the best price. No fuss, no muss.
 
