@@ -76,6 +76,21 @@ npm run build
 
 ## Changelog
 
+### Version 1.7 Updates:
+
+1. AWS recently changed the page layout, so parsing the price must be adjusted accordingly.
+
+2. Currency exchange API doesn't work any more, so now a fixed exchange rate is used. This is not ideal, but at least on the bright side, it's slightly faster than before.
+
+The current exchange rate being used is:
+
+- GBP to EUR: 1.18
+- EUR to GBP: 0.84
+- GBP to SEK: 11.77
+- SEK to GBP: 0.085
+- EUR to SEK: 9.93
+- SEK to EUR: 0.10
+
 ### Version 1.6 Updates:
 
 - Add amazon.se, and add support for SEK currency conversion

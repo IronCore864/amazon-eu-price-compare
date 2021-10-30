@@ -50,25 +50,25 @@ export function receiveOptions(items) {
 // async action
 export function getCurrentPageUrl() {
 	return (dispatch, getState) => {
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 			var country = amzUtil.getCountryFromAmazonProductPageUrl(tabs[0].url)
 			var productID = amzUtil.getProductIDFromAmazonProductPageUrl(tabs[0].url)
 			if (productID === null) {
 				return
 			}
-			chrome.tabs.sendMessage(tabs[0].id, {"message": "get_current_page_info"}, function(results) {
+			chrome.tabs.sendMessage(tabs[0].id, { "message": "get_current_page_info" }, function (results) {
 				if (results === null || results[0] === null) {
 					return
 				}
 				dispatch(receiveCurrentPagePrice(country, results[0]))
 				if (results.length > 1) {
-					dispatch(receiveCountryRank(country, results[1]))	
+					dispatch(receiveCountryRank(country, results[1]))
 				}
 			})
 			var all_countries = ['uk', 'de', 'fr', 'es', 'it', 'nl', 'se']
 			var currentCountry = [country]
-			var countriesToSearch = all_countries.filter(x => currentCountry.indexOf(x) < 0 )
-			for (var i = 0; i < countriesToSearch.length; i ++){
+			var countriesToSearch = all_countries.filter(x => currentCountry.indexOf(x) < 0)
+			for (var i = 0; i < countriesToSearch.length; i++) {
 				dispatch(getCountryPrice(productID, countriesToSearch[i]))
 			}
 		})
@@ -80,33 +80,21 @@ export function getOptions() {
 	return (dispatch, getState) => {
 		chrome.storage.sync.get({
 			showRanks: false
-		}, function(items) {
+		}, function (items) {
 			dispatch(receiveOptions(items))
 		})
 	}
 }
 
 // async action
-export function getCurrencyRate(fromCurrency, toCurrency) {
+export function getCurrencyRate() {
 	return (dispatch, getState) => {
-		return fetch(
-			`https://api.exchangeratesapi.io/latest?symbols=${toCurrency}&base=${fromCurrency}`,
-			{
-				method: 'GET',
-				mode: 'cors',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json',
-				}
-			}
-		)
-		.then((response) => response.json())
-		.then((responseJson) => {
-			var rate = responseJson.rates[toCurrency]
-			dispatch(receiveCurrencyRate(fromCurrency, toCurrency, rate))
-		})
-		.catch(function(err) {
-		})
+		dispatch(receiveCurrencyRate("GBP", "EUR", 1.18))
+		dispatch(receiveCurrencyRate("EUR", "GBP", 0.84))
+		dispatch(receiveCurrencyRate("GBP", "SEK", 11.77))
+		dispatch(receiveCurrencyRate("SEK", "GBP", 0.085))
+		dispatch(receiveCurrencyRate("EUR", "SEK", 9.93))
+		dispatch(receiveCurrencyRate("SEK", "EUR", 0.10))
 	}
 }
 
@@ -123,25 +111,25 @@ export function getCountryPrice(productID, country) {
 				}
 			}
 		)
-		.then((response) => {
-			if(response.ok) {
-				response.text().then(function(html) {
-					var parser = new DOMParser()
-					var doc = parser.parseFromString(html, "text/html")
-					var price = amzUtil.getPriceFromAmazonProductDetailPage(doc)
-					var rank = amzUtil.getRank(doc)
-					if (price === null) {
-						return
-					}
-					dispatch(receiveCountryPrice(country, price, url))
-					dispatch(receiveCountryRank(country, rank))
-				})
-			} else {
-				console.log(`Cannot find this item from amazon ${country}.`)
-			}
-		})
-		.catch(function(err) {
-			console.log('There has been a problem with fetching price for other amazon markets: ' + error.message)
-		})
+			.then((response) => {
+				if (response.ok) {
+					response.text().then(function (html) {
+						var parser = new DOMParser()
+						var doc = parser.parseFromString(html, "text/html")
+						var price = amzUtil.getPriceFromAmazonProductDetailPage(doc)
+						var rank = amzUtil.getRank(doc)
+						if (price === null) {
+							return
+						}
+						dispatch(receiveCountryPrice(country, price, url))
+						dispatch(receiveCountryRank(country, rank))
+					})
+				} else {
+					console.log(`Cannot find this item from amazon ${country}.`)
+				}
+			})
+			.catch(function (err) {
+				console.log('There has been a problem with fetching price for other amazon markets: ' + error.message)
+			})
 	}
 }
