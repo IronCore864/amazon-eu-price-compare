@@ -76,6 +76,14 @@ npm run build
 
 ## Changelog
 
+### Version 1.8 Updates:
+
+Since recently (c.a. Feb 2022), Amazon has changed some of its page style.
+
+It seems not all pages are affected; although most pages are adjusted into the new style, there are indeed older style existing at the same time.
+
+Thanks Maurice and kunder-terapi05 for reporting the bug.
+
 ### Version 1.7 Updates:
 
 1. AWS recently changed the page layout, so parsing the price must be adjusted accordingly.
