@@ -10,7 +10,7 @@ export function getProductIDFromAmazonProductPageUrl(url) {
 }
 
 export function getCountryFromAmazonProductPageUrl(url) {
-	var re = /amazon(\.co)*\.(uk|fr|de|it|es|nl|se)/
+	var re = /amazon(\.co|\.com)*\.(uk|fr|de|it|es|nl|se|be)/
 	var match = re.exec(url)
 	if (url.match(re)) {
 		return match[2]
@@ -25,6 +25,9 @@ export function generateAmazonProductPageUrlForCountry(productID, country) {
 	var countryDomain = country.toLowerCase();
 	if (countryDomain === 'uk') {
 		countryDomain = 'co.uk'
+	}
+	if (countryDomain === 'be') {
+		countryDomain = 'com.be'
 	}
 	var searchUrlSuffix = '/dp/'
 	return searchUrlPrefix + countryDomain + searchUrlSuffix + productID + '/'

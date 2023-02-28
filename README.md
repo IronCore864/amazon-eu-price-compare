@@ -4,13 +4,13 @@ This extension helps you to find the best price with just one click.
 
 You just go to any Amazon EU store, search your item, click the icon of this extension(a black letter B, which stands for the "B"est price of course) and it shows you the prices in all the other Amazon European stores, including currency conversion (GBP/SEK).
 
-## Download and Install
+## 1 Download and Install
 
 Please go to [Chrome Webstore](https://chrome.google.com/webstore/detail/amazon-eu-price-compare/iaakgomiepekffchlipoegcgahfcdbad).
 
 Install now and be part of the 1874 proud user base (as of Dec 26th, 2020).
 
-## Let Me Paint a Picture
+## 2 Let Me Paint a Picture
 
 OK. You live in Europe, and you want to buy something off Amazon. Of course, you want the best price.
 
@@ -41,42 +41,51 @@ You probably see where I'm going with this, and yes, you are right: it is annoyi
 
 Well, now you are saved. Install this plugin, just a single click, and you get the best price. No fuss, no muss.
 
-## Known Issue
+## 3 Known Issue
 
-##### For CD/books/DVD categories, some products have multiple format, like a movie can have multiple formats like DVD, blue-ray, etc; for some products can't parse price correctly.
+> For CD/books/DVD categories, some products have multiple format, like a movie can have multiple formats like DVD, blue-ray, etc; for some products can't parse price correctly.
 
-## Disclaimer
+## 4 Disclaimer
 
-As of Dec 1st 2020, I have joined AWS professionally.
+I worked at AWS professionally from Dec 1st 2020 to mid-June 2021.
 
-Everything I have said, am saying now, and will be said in the future about this plugin and this repo, is only my personal idea, and does not represents Amazon/AWS's opinion.
+Everything I said in that period about this plugin and this repo is only my personal idea, and does not represents Amazon/AWS's opinion, and the develolpment done in that period about this plugin is completely done in my spare time outside office hours.
 
-My future improvement about this plugin will only be done in my spare time outside office hours.
-
-## FAQ
+## 5 FAQ
 
 See [FAQ](./faq.md). It's highly recommended that you have a look first.
 
-## DEV Info
+## 6 DEV Info
 
 Chrome extension with react and redux.
 
 npm, babel and webpack needed for building.
 
-### Build
+### 6.1 Build
 
 ```
 npm i
 npm run build
 ```
 
-### Unpacked chrome extension dir
+### 6.2 Unpacked chrome extension dir
 
 `chrome-extension`
 
-## Changelog
+## 7 Changelog
 
-### Version 1.8 Updates:
+### Version 1.9 Updates
+
+- Add amazon.com.be, thanks to a few users who reminded me about this.
+- Currency exchange rate update:
+  - GBP to EUR: 1.14
+  - EUR to GBP: 0.88
+  - GBP to SEK: 12.51
+  - SEK to GBP: 0.080
+  - EUR to SEK: 11.02
+  - SEK to EUR: 0.091
+
+### Version 1.8 Updates
 
 Since recently (c.a. Feb 2022), Amazon has changed some of its page style.
 
@@ -84,7 +93,7 @@ It seems not all pages are affected; although most pages are adjusted into the n
 
 Thanks Maurice and kunder-terapi05 for reporting the bug.
 
-### Version 1.7 Updates:
+### Version 1.7 Updates
 
 1. AWS recently changed the page layout, so parsing the price must be adjusted accordingly.
 
@@ -99,7 +108,7 @@ The current exchange rate being used is:
 - EUR to SEK: 9.93
 - SEK to EUR: 0.10
 
-### Version 1.6 Updates:
+### Version 1.6 Updates
 
 - Add amazon.se, and add support for SEK currency conversion
 - Add FAQ and Disclaimer
@@ -110,36 +119,44 @@ Price list logic changed:
 - If current page country is SE: show only SEK price (previously SE not supported)
 - If current country is others (DE/IT/ES/FR/NL), show only EUR price (GBP converted to EUR, same as before, and SEK converted to EUR too)
 
-### Version 1.5 Updates:
+### Version 1.5 Updates
 
 I was informed by a user that Amazon opens amazon.nl for Netherland and Belgium, so this version is mainly about adding support for amazon.nl
 
 Main feature:
+
 - Adding support for amazon.nl
 
 By the way, some minor non-functional changes:
+
 - Update dependencies versions to fix vulnerabilites
 - Update README about build info
 
-### Version 1.4.1 Updates:
+### Version 1.4.1 Updates
+
 - Update manifest description.
 
-### Version 1.4.0 Updates:
+### Version 1.4.0 Updates
+
 - Change currency exchange rate API URL
 - Fix issues with most CD/books/DVD categories that may have multiple formats and different prices
 - Update error message when can't parse price
 
-### Version 1.3.2 Updates:
+### Version 1.3.2 Updates
+
 - Fix bug about some amazon URL analyzing
 
-### Version 1.3.1 Updates:
+### Version 1.3.1 Updates
+
 - Fix bug when a product doesn't has main category rank
 
-### Version 1.3.0 Updates:
+### Version 1.3.0 Updates
+
 - Add options page
 - Add product rank. By default it's not shown. Can be enabled in options page. Only main category rank is shown.
 
-### Version 1.2.1 Updates:
+### Version 1.2.1 Updates
+
 - If you are visiting Amazon UK, prices are shown in both EUR and GBP (Thanks to UK user Richard Burgess's suggestion).
 - Minor bug fix, like if you're not visiting amazon product page, corresponding message is shown instead of a blank page.
 - Code refactor, to use redux to separate model and view.

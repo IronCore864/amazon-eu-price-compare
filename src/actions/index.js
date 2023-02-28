@@ -65,7 +65,7 @@ export function getCurrentPageUrl() {
 					dispatch(receiveCountryRank(country, results[1]))
 				}
 			})
-			var all_countries = ['uk', 'de', 'fr', 'es', 'it', 'nl', 'se']
+			var all_countries = ['uk', 'de', 'fr', 'es', 'it', 'nl', 'se', 'be']
 			var currentCountry = [country]
 			var countriesToSearch = all_countries.filter(x => currentCountry.indexOf(x) < 0)
 			for (var i = 0; i < countriesToSearch.length; i++) {
@@ -89,12 +89,12 @@ export function getOptions() {
 // async action
 export function getCurrencyRate() {
 	return (dispatch, getState) => {
-		dispatch(receiveCurrencyRate("GBP", "EUR", 1.18))
-		dispatch(receiveCurrencyRate("EUR", "GBP", 0.84))
-		dispatch(receiveCurrencyRate("GBP", "SEK", 11.77))
-		dispatch(receiveCurrencyRate("SEK", "GBP", 0.085))
-		dispatch(receiveCurrencyRate("EUR", "SEK", 9.93))
-		dispatch(receiveCurrencyRate("SEK", "EUR", 0.10))
+		dispatch(receiveCurrencyRate("GBP", "EUR", 1.14))
+		dispatch(receiveCurrencyRate("EUR", "GBP", 0.88))
+		dispatch(receiveCurrencyRate("GBP", "SEK", 12.51))
+		dispatch(receiveCurrencyRate("SEK", "GBP", 0.08))
+		dispatch(receiveCurrencyRate("EUR", "SEK", 11.02))
+		dispatch(receiveCurrencyRate("SEK", "EUR", 0.091))
 	}
 }
 
