@@ -21,6 +21,7 @@ If you are a frequent Amazon user living in Europe, chances are, you have alread
 - amazon.fr
 - amazon.it
 - amazon.nl
+- amazon.com.be
 - amazon.co.uk
 - amazon.se (newly launched on Oct 28, 2020)
 
