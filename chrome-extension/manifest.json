@@ -7,6 +7,11 @@
     "128": "icon128.png",
     "48": "icon48.png"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "IronCore864@amazon-eu-price-compare"
+    }
+  },
   "browser_action": {
     "default_icon": "icon128.png",
     "default_popup": "popup.html",
@@ -15,7 +20,15 @@
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/",
-    "storage"
+    "storage",
+    "*://www.amazon.de/*",
+    "*://www.amazon.fr/*",
+    "*://www.amazon.it/*",
+    "*://www.amazon.es/*",
+    "*://www.amazon.nl/*",
+    "*://www.amazon.se/*",
+    "*://www.amazon.co.uk/*",
+    "*://www.amazon.com.be/*"
   ],
   "options_ui": {
     "page": "options.html",
