@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Amazon Best Price Europe",
   "description": "Compare and find the best price in Amazon EU markets.",
   "version": "1.9.0",
@@ -14,8 +14,10 @@
   },
   "permissions": [
     "activeTab",
-    "https://ajax.googleapis.com/",
     "storage"
+  ],
+  "host_permissions": [
+    "https://ajax.googleapis.com/"
   ],
   "options_ui": {
     "page": "options.html",
