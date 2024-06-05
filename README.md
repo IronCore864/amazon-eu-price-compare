@@ -74,16 +74,20 @@ npm run build
 
 ## 7 Changelog
 
+### Version 2.0 Updates
+
+- Upgrade to Chrome extension manifest V3.
+- Currency exchange rate update:
+  - GBP to EUR: 1.17
+  - EUR to GBP: 0.85
+  - GBP to SEK: 13.32
+  - SEK to GBP: 0.075
+  - EUR to SEK: 11.34
+  - SEK to EUR: 0.088
+
 ### Version 1.9 Updates
 
 - Add amazon.com.be, thanks to a few users who reminded me about this.
-- Currency exchange rate update:
-  - GBP to EUR: 1.14
-  - EUR to GBP: 0.88
-  - GBP to SEK: 12.51
-  - SEK to GBP: 0.080
-  - EUR to SEK: 11.02
-  - SEK to EUR: 0.091
 
 ### Version 1.8 Updates
 
