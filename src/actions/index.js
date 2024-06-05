@@ -89,12 +89,12 @@ export function getOptions() {
 // async action
 export function getCurrencyRate() {
 	return (dispatch, getState) => {
-		dispatch(receiveCurrencyRate("GBP", "EUR", 1.14))
-		dispatch(receiveCurrencyRate("EUR", "GBP", 0.88))
-		dispatch(receiveCurrencyRate("GBP", "SEK", 12.51))
-		dispatch(receiveCurrencyRate("SEK", "GBP", 0.08))
-		dispatch(receiveCurrencyRate("EUR", "SEK", 11.02))
-		dispatch(receiveCurrencyRate("SEK", "EUR", 0.091))
+		dispatch(receiveCurrencyRate("GBP", "EUR", 1.17))
+		dispatch(receiveCurrencyRate("EUR", "GBP", 0.85))
+		dispatch(receiveCurrencyRate("GBP", "SEK", 13.32))
+		dispatch(receiveCurrencyRate("SEK", "GBP", 0.075))
+		dispatch(receiveCurrencyRate("EUR", "SEK", 11.34))
+		dispatch(receiveCurrencyRate("SEK", "EUR", 0.088))
 	}
 }
 
